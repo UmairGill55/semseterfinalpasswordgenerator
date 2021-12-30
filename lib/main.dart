@@ -1,77 +1,35 @@
 import 'package:flutter/material.dart';
+import 'routes.dart';
+import 'transactionview.dart';
+import 'categoriesview.dart';
+import 'reportsview.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  static const appTitle = 'Password Generator';
-
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: appTitle,
-      home: MyHomePage(title: appTitle),
+    return MaterialApp(
+      title: 'Navigation Drawer Demo',
+      theme: _createTheme(),
+      home: TransactionView(),
+      routes: {
+        routes.transaction: (context) => TransactionView(),
+        routes.categories: (context) => CategoriesView(),
+        routes.reports: (context) => ReportsView(),
+      },
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(title)),
-      body: const Center(
-        child: Text(''),
-      ),
-      drawer: Drawer(
-        // Add a ListView to the drawer. This ensures the user can scroll
-        // through the options in the drawer if there isn't enough vertical
-        // space to fit everything.
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Selection'),
-            ),
-            ListTile(
-              title: const Text('Easy'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Hard'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Storage'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+ThemeData _createTheme() {
+  return ThemeData(
+    brightness: Brightness.light,
+    primaryColor: Colors.purple[800],
+    accentColor: Colors.pink[600],
+    canvasColor: Color.fromRGBO(251, 228, 251, 1),
+    fontFamily: 'Georgia',
+  );
 }
