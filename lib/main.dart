@@ -60,6 +60,15 @@ class MyHomePage extends StatelessWidget {
                 Navigator.pop(context);
               },
             ),
+            ListTile(
+              title: const Text('Storage'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
           ],
         ),
       ),
