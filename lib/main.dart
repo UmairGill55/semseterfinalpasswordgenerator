@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'routes.dart';
-import 'transactionview.dart';
-import 'categoriesview.dart';
-import 'reportsview.dart';
+import 'storageview.dart';
+import 'harderview.dart';
+import 'easyview.dart';
 
 void main() {
   runApp(MyApp());
