@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Navigation Drawer Demo',
+      title: 'Password Generator',
       theme: _createTheme(),
       home: TransactionView(),
       routes: {
