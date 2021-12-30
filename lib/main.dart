@@ -40,10 +40,10 @@ class MyHomePage extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Text(''),
+              child: Text('Selection'),
             ),
             ListTile(
-              title: const Text(''),
+              title: const Text('Easy'),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -52,7 +52,7 @@ class MyHomePage extends StatelessWidget {
               },
             ),
             ListTile(
-              title: const Text(''),
+              title: const Text('Hard'),
               onTap: () {
                 // Update the state of the app
                 // ...
